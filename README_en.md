@@ -30,6 +30,8 @@
 > imitates others**. It resonates with [Pierrot Universe](https://github.com/Pierrot-vision)'s first
 > philosophy (MimiC) — following and combining the good parts of existing research — which is why we use this name.
 
+* The training code and trained weights are not publicly released at this time.
+
 ---
 
 ## 🧩 Supported Models
