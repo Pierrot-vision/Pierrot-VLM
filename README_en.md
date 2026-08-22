@@ -22,11 +22,6 @@
 
 ## 💡 Introduction
 
-**PIERROT VLM · INFER** carves out only what you need to *run* the **five vision-language models**
-reimplemented and trained from scratch in pure PyTorch over at
-[Pierrot-VLM-Lab](https://github.com/Pierrot-vision/Pierrot-VLM-Lab). It covers **every task except
-document parsing (OCR)** — captioning, VQA, detection, attribute recognition.
-
 > **PIERROT VLM** is where I reproduce, adapt, and push on leading VLM algorithms — and try out my
 > own ideas. [VLM-OCR](https://github.com/Pierrot-vision/Pierrot-VLM-OCR) lives in its own separate
 > place.

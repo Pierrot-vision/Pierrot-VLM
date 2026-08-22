@@ -22,10 +22,6 @@
 
 ## 💡 소개
 
-**PIERROT VLM · INFER** 는 [Pierrot-VLM-Lab](https://github.com/Pierrot-vision/Pierrot-VLM-Lab) 에서
-순수 PyTorch로 바닥부터 재구현·학습한 **다섯 개 비전-언어 모델**을 **돌리는 데 필요한 부분만**
-떼어낸 배포본입니다. 캡션·VQA·검출·속성 인식 등 **문서 파싱(OCR)을 제외한 태스크**를 다룹니다.
-
 > **PIERROT VLM** 는 VLM 관련 선도 알고리즘에 대한 재현 · 적용 · 성능향상 · 다양한 나의
 > 아이디어 등을 실험하는 장소입니다. [VLM-OCR](https://github.com/Pierrot-vision/Pierrot-VLM-OCR)
 > 은 독립적 장소에 있습니다.
