@@ -78,9 +78,19 @@
 
 > 리소스 제약으로 **가능성만 확인 후 학습 중간에 멈춘** 시점의 결과입니다.
 
+**학습 곡선** — negative 샘플 포함 파인튜닝:
+
+![PaliGemma2 검출 학습 loss](docs/images/paligemma2/det_loss.jpg)
+
 ### 🟣 Qwen3-VL — 패션 속성 인식
 
+**예측 결과 (GT vs Prediction)**
+
 ![Qwen3-VL 패션 속성 정답 샘플](docs/images/qwen3vl/fashion_attr_samples.jpg)
+
+**학습 곡선**
+
+![Qwen3-VL 패션 속성 학습 loss](docs/images/qwen3vl/fashion_attr_loss.png)
 
 ### 🟢 nanoVLM — FineVision 스크래치 학습
 
@@ -88,11 +98,27 @@
 
 ![nanoVLM in-distribution 정답 샘플](docs/images/nanovlm/infer_indist_dvqa_ckpt12000.jpg)
 
+> 18개 FineVision subset 을 백본(SigLIP2+SmolLM2)에서 스크래치로 12,000스텝 학습했습니다
+> (멀티턴 패킹 + 과적합 완화 수정 적용). 학습분포에선 near-perfect(dvqa held-out 10/10),
+> 상식추론(aokvqa OOD)은 학습 믹스에 없어 약합니다 — 진단은 [LAB/nanovlm.md](LAB/nanovlm.md) 10절.
+
+**학습 곡선** — train loss / token-acc (12,000스텝 완주):
+
+![nanoVLM 학습 loss](docs/images/nanovlm/loss.jpg)
+
 ### 🔵 SmolVLM2 — FineVision 파인튜닝
 
 자유형 캡션/VQA, greedy:
 
 ![SmolVLM2 추론 샘플](docs/images/smolvlm2/infer_samples.jpg)
+
+> 공식 `SmolVLM2-2.2B-Instruct` 가중치에서 FineVision 파인튜닝(12,000스텝). 옷·색·자세·소품까지
+> 세밀하고 일관된 묘사를 냅니다. ("from scratch" 는 **모델 코드 재구현**을 뜻하며, 가중치는 공식
+> base 에서 시작한 파인튜닝이라 nanoVLM 의 밑바닥 학습과 성격이 다릅니다.)
+
+**학습 곡선** — train / eval loss (12,000스텝 완주):
+
+![SmolVLM2 학습 loss](docs/images/smolvlm2/loss.jpg)
 
 ### 📊 통합 평가 — MMStar (ours vs 공식 base)
 

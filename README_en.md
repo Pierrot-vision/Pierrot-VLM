@@ -81,9 +81,19 @@ reproduce through this distribution's inference path. For the design notes and f
 
 > Resource constraints meant we **stopped mid-training once feasibility was confirmed** — these are the results from that point.
 
+**Training curve** — fine-tuning with negative samples included:
+
+![PaliGemma2 detection training loss](docs/images/paligemma2/det_loss.jpg)
+
 ### 🟣 Qwen3-VL — Fashion attribute recognition
 
+**Predictions (GT vs Prediction)**
+
 ![Qwen3-VL fashion attribute samples](docs/images/qwen3vl/fashion_attr_samples.jpg)
+
+**Training curve**
+
+![Qwen3-VL fashion attribute training loss](docs/images/qwen3vl/fashion_attr_loss.png)
 
 ### 🟢 nanoVLM — FineVision from-scratch training
 
@@ -91,11 +101,29 @@ Held-out from the training distribution (unseen dvqa tail), greedy:
 
 ![nanoVLM in-distribution samples](docs/images/nanovlm/infer_indist_dvqa_ckpt12000.jpg)
 
+> Trained from the backbones (SigLIP2 + SmolLM2) from scratch for 12,000 steps on 18 FineVision
+> subsets (with multi-turn packing and the overfitting fix applied). Near-perfect in-distribution
+> (dvqa held-out 10/10); commonsense reasoning (aokvqa, OOD) is weak because it is absent from the
+> training mix — see [LAB/nanovlm.md](LAB/nanovlm.md) §10 for the diagnosis.
+
+**Training curve** — train loss / token accuracy (full 12,000 steps):
+
+![nanoVLM training loss](docs/images/nanovlm/loss.jpg)
+
 ### 🔵 SmolVLM2 — FineVision fine-tuning
 
 Free-form captioning/VQA, greedy:
 
 ![SmolVLM2 inference samples](docs/images/smolvlm2/infer_samples.jpg)
+
+> Fine-tuned on FineVision (12,000 steps) starting from the official `SmolVLM2-2.2B-Instruct`
+> weights — detailed, consistent descriptions down to clothing, color, pose, and props. ("From
+> scratch" here means the **model code was reimplemented**; the weights start from the official
+> base, so this differs in character from nanoVLM's ground-up training.)
+
+**Training curve** — train / eval loss (full 12,000 steps):
+
+![SmolVLM2 training loss](docs/images/smolvlm2/loss.jpg)
 
 ### 📊 Combined evaluation — MMStar (ours vs official base)
 
