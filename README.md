@@ -148,14 +148,6 @@ cd Pierrot-VLM
 pip install -r requirements.txt
 ```
 
-학습 의존(`accelerate` 등)은 필요 없습니다. Qwen3-VL·Qwen3.5 는 모델 구현과 체크포인트
-로딩이 모두 스크래치(raw config 파싱)라 특정 `transformers` 버전이 필요 없습니다 —
-토크나이저 로드만 되면 구버전에서도 동작합니다.
-
-> PaliGemma 토크나이저는 `sentencepiece` 가 필요하며, Gemma 계열 모델 다운로드에는
-> HuggingFace 로그인(`huggingface-cli login`)과 라이선스 동의가 필요할 수 있습니다.
-> GPU 환경에서는 CUDA 버전에 맞는 PyTorch 빌드를 먼저 설치하는 것을 권장합니다.
-
 ---
 
 ## 🔮 추론

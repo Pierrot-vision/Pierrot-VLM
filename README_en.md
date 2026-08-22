@@ -151,14 +151,6 @@ cd Pierrot-VLM
 pip install -r requirements.txt
 ```
 
-No training dependencies (`accelerate` and friends) are needed. Qwen3-VL and Qwen3.5 implement both
-the model and the checkpoint loading from scratch (raw config parsing), so they need no particular
-`transformers` version — as long as the tokenizer loads, older versions work.
-
-> The PaliGemma tokenizer requires `sentencepiece`, and downloading Gemma-family models may require
-> a HuggingFace login (`huggingface-cli login`) and license acceptance. On GPU, install a PyTorch
-> build matching your CUDA version first.
-
 ---
 
 ## 🔮 Inference
