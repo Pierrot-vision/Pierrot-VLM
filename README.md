@@ -22,6 +22,9 @@
 
 ## 💡 소개
 
+**PIERROT VLM** 은 1인 **VLM(Vision-Language Model)** 연구·개발 프로젝트이고, 이 저장소는
+그중 **학습을 완주한 모델을 실제로 돌려 보는 추론 배포본**입니다.
+
 **PIERROT VLM** 는 VLM 관련 선도 알고리즘에 대한 재현 · 적용 · 성능향상 · 다양한 나의
 아이디어 등을 실험하는 장소입니다. [VLM-OCR](https://github.com/Pierrot-vision/Pierrot-VLM-OCR)
 은 독립적 장소에 있습니다.

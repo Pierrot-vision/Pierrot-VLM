@@ -22,6 +22,9 @@
 
 ## 💡 Introduction
 
+**PIERROT VLM** is a one-person **VLM (vision-language model)** research and development project,
+and this repository is the **inference distribution** for the models that finished training.
+
 **PIERROT VLM** is where I reproduce, adapt, and push on leading VLM algorithms — and try out my
 own ideas. [VLM-OCR](https://github.com/Pierrot-vision/Pierrot-VLM-OCR) lives in its own separate
 place.
