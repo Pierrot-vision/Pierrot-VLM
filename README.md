@@ -32,6 +32,19 @@
 
 * 현재 학습코드, 학습 모델은 공개하지 않고 있습니다.
 
+## 📰 News
+
+- 2026-08-22 — 🚀 **추론 코드 공개** (PaliGemma2 · nanoVLM · SmolVLM2 · Qwen3-VL · Qwen3.5)
+- 2026-08-04 — 📊 **MMStar 통합 평가** 공개 (재구현 vs 공식 base)
+- 2026-08-04 — 🔵 **SmolVLM2 (FineVision)** 학습 실험 결과 공개
+- 2026-08-01 — 🟢 **nanoVLM (FineVision)** 학습 실험 결과 공개
+- 2026-07-29 — 🟣 **Qwen3-VL (Fashion Attribute)** 실험 결과 공개
+- 2026-07-28 — 🧩 **Qwen3.5-4B** 추가 (다섯 번째 모델)
+- 2026-07-28 — 🎯 **PaliGemma2 (Detection)** 실험 결과 공개
+- 2026-07-24 — 🟣 **Qwen3-VL** 추가 (네 번째 모델)
+- 2026-07-23 — 🟩 **SmolVLM2** 추가 (세 번째 모델)
+- 2026-07-22 — 🚀 **첫 공개** (PaliGemma2 · nanoVLM)
+
 ---
 
 ## 🧩 지원 모델

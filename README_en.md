@@ -32,6 +32,19 @@ place.
 
 * The training code and trained weights are not publicly released at this time.
 
+## 📰 News
+
+- 2026-08-22 — 🚀 **Inference code released** (PaliGemma2 · nanoVLM · SmolVLM2 · Qwen3-VL · Qwen3.5)
+- 2026-08-04 — 📊 Published **MMStar combined evaluation** (reimpl vs official base)
+- 2026-08-04 — 🔵 Published **SmolVLM2 (FineVision)** training results
+- 2026-08-01 — 🟢 Published **nanoVLM (FineVision)** training results
+- 2026-07-29 — 🟣 Published **Qwen3-VL (Fashion Attribute)** results
+- 2026-07-28 — 🧩 Added **Qwen3.5-4B** (5th model)
+- 2026-07-28 — 🎯 Published **PaliGemma2 (Detection)** results
+- 2026-07-24 — 🟣 Added **Qwen3-VL** (4th model)
+- 2026-07-23 — 🟩 Added **SmolVLM2** (3rd model)
+- 2026-07-22 — 🚀 **First release** (PaliGemma2 · nanoVLM)
+
 ---
 
 ## 🧩 Supported Models
