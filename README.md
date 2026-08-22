@@ -22,9 +22,9 @@
 
 ## 💡 소개
 
-> **PIERROT VLM** 는 VLM 관련 선도 알고리즘에 대한 재현 · 적용 · 성능향상 · 다양한 나의
-> 아이디어 등을 실험하는 장소입니다. [VLM-OCR](https://github.com/Pierrot-vision/Pierrot-VLM-OCR)
-> 은 독립적 장소에 있습니다.
+**PIERROT VLM** 는 VLM 관련 선도 알고리즘에 대한 재현 · 적용 · 성능향상 · 다양한 나의
+아이디어 등을 실험하는 장소입니다. [VLM-OCR](https://github.com/Pierrot-vision/Pierrot-VLM-OCR)
+은 독립적 장소에 있습니다.
 
 > **이름의 유래** — 피에로(Pierrot)는 원래 무언극에서 **남을 따라 하고 흉내 내는** 광대
 > 캐릭터입니다. 기존 연구의 좋은 점을 따라 재현·결합한다는 [Pierrot Universe](https://github.com/Pierrot-vision)
