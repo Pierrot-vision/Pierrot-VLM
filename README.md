@@ -81,7 +81,7 @@
 - [x] **nanovlm**
 - [x] **smolvlm2**
 - [x] **qwen3vl**
-- [ ] **qwen35**
+- [x] **qwen35**
 
 ---
 

@@ -81,7 +81,7 @@ Run end to end through the inference path on public weights.
 - [x] **nanovlm**
 - [x] **smolvlm2**
 - [x] **qwen3vl**
-- [ ] **qwen35**
+- [x] **qwen35**
 
 ---
 
