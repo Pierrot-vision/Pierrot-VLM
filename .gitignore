@@ -1,0 +1,29 @@
+# 파이썬 캐시 / 빌드 부산물
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 체크포인트 / 추론 결과 / 로그
+/outputs/
+/results/
+*.safetensors
+*.pt
+*.ckpt
+*.log
+
+# 도구·환경 캐시
+.cache/
+.hf_cache/
+.venv/
+venv/
+.env
+
+# OS / 에디터
+.DS_Store
+Thumbs.db
+*.swp

@@ -1,0 +1,15 @@
+# Pierrot-VLM-Infer 추론 전용 의존성 (학습 의존은 없다 — accelerate 등 불필요)
+torch>=2.1.0
+transformers>=4.44.0      # 토크나이저 로드 전용(모델 구현은 스크래치라 버전 제약 없음)
+safetensors>=0.4.0
+huggingface_hub>=0.24.0
+sentencepiece>=0.1.99     # PaliGemma2 토크나이저
+pillow>=10.0.0
+numpy>=1.24.0
+# nanoVLM 전용(동적 리사이즈 + 타일 분할 전처리)
+torchvision>=0.16.0
+einops>=0.7.0
+# MMStar 벤치(eval/eval_*_bench.py)에서 데이터셋을 내려받을 때만 필요 — 선택
+# datasets>=2.19.0
+# 공식 HF 구현과의 수치 대조(tools/parity_*.py)에만 필요 — 선택
+#   Qwen3-VL: transformers>=4.57 · Qwen3.5: transformers>=5.1
