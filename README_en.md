@@ -75,13 +75,14 @@ logits and generated tokens against the official HF implementation on public wei
 
 ## ✅ Verified
 
-Run end to end through the inference path on public weights.
+Models actually put through training and experiments. **Qwen3.5 is a from-scratch port only** —
+it has not been used in a training run or experiment yet.
 
 - [x] **paligemma2**
 - [x] **nanovlm**
 - [x] **smolvlm2**
 - [x] **qwen3vl**
-- [x] **qwen35**
+- [ ] **qwen35**
 
 ---
 
