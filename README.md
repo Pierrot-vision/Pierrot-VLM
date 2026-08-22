@@ -26,12 +26,9 @@
 순수 PyTorch로 바닥부터 재구현·학습한 **다섯 개 비전-언어 모델**을 **돌리는 데 필요한 부분만**
 떼어낸 배포본입니다. 캡션·VQA·검출·속성 인식 등 **문서 파싱(OCR)을 제외한 태스크**를 다룹니다.
 
-학습 엔진(Accelerate 루프)·데이터 빌더·데이터셋 어댑터·하이퍼파라미터는 들어 있지 않습니다 —
-**체크포인트를 읽어 생성하는 경로만** 있습니다. 그래서 `accelerate` 없이 설치되고, 읽을 코드도
-그만큼 줄어듭니다.
-
-> **문서 파싱(OCR) 추론**은 별도 배포본 [Pierrot-VLM-OCR](https://github.com/Pierrot-vision/Pierrot-VLM-OCR)
-> 에 있습니다. 학습 코드 전체는 [Pierrot-VLM-Lab](https://github.com/Pierrot-vision/Pierrot-VLM-Lab) 에 있습니다.
+> **PIERROT VLM** 는 VLM 관련 선도 알고리즘에 대한 재현 · 적용 · 성능향상 · 다양한 나의
+> 아이디어 등을 실험하는 장소입니다. [VLM-OCR](https://github.com/Pierrot-vision/Pierrot-VLM-OCR)
+> 은 독립적 장소에 있습니다.
 
 > **이름의 유래** — 피에로(Pierrot)는 원래 무언극에서 **남을 따라 하고 흉내 내는** 광대
 > 캐릭터입니다. 기존 연구의 좋은 점을 따라 재현·결합한다는 [Pierrot Universe](https://github.com/Pierrot-vision)

@@ -27,13 +27,9 @@ reimplemented and trained from scratch in pure PyTorch over at
 [Pierrot-VLM-Lab](https://github.com/Pierrot-vision/Pierrot-VLM-Lab). It covers **every task except
 document parsing (OCR)** — captioning, VQA, detection, attribute recognition.
 
-The training engine (Accelerate loop), data builders, dataset adapters, and hyperparameters are
-**not** included — only the path that reads a checkpoint and generates. So it installs without
-`accelerate`, and there is that much less code to read.
-
-> **Document parsing (OCR) inference** lives in a separate distribution,
-> [Pierrot-VLM-OCR](https://github.com/Pierrot-vision/Pierrot-VLM-OCR). The full training code is at
-> [Pierrot-VLM-Lab](https://github.com/Pierrot-vision/Pierrot-VLM-Lab).
+> **PIERROT VLM** is where I reproduce, adapt, and push on leading VLM algorithms — and try out my
+> own ideas. [VLM-OCR](https://github.com/Pierrot-vision/Pierrot-VLM-OCR) lives in its own separate
+> place.
 
 > **Origin of the name** — Pierrot is originally a pantomime clown character who **mimics and
 > imitates others**. It resonates with [Pierrot Universe](https://github.com/Pierrot-vision)'s first
