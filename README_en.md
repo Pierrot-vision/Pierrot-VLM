@@ -73,6 +73,18 @@ logits and generated tokens against the official HF implementation on public wei
 
 ---
 
+## ✅ Verified
+
+Run end to end through the inference path on public weights.
+
+- [x] **paligemma2**
+- [x] **nanovlm**
+- [x] **smolvlm2**
+- [x] **qwen3vl**
+- [ ] **qwen35**
+
+---
+
 ## 📊 Results
 
 Training and experiments happened in the training repo; what follows are the results you can
