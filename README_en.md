@@ -1,4 +1,4 @@
-<h1 align="center">🔮 PIERROT VLM · INFER</h1>
+<h1 align="center">🔮 PIERROT VLM</h1>
 
 <p align="center">
   <b>Five from-scratch PyTorch vision-language models — inference distribution (non-OCR tasks)</b>

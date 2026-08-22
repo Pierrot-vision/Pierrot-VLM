@@ -1,4 +1,4 @@
-<h1 align="center">🔮 PIERROT VLM · INFER</h1>
+<h1 align="center">🔮 PIERROT VLM</h1>
 
 <p align="center">
   <b>PyTorch 스크래치 비전-언어 모델 5종 — 추론 배포본 (OCR 제외 태스크)</b>

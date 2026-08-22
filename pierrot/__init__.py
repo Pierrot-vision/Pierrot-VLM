@@ -1,4 +1,4 @@
-"""Pierrot-VLM-Infer: 스크래치 구현 VLM **추론** 패키지 (OCR 제외 태스크).
+"""Pierrot-VLM: 스크래치 구현 VLM **추론** 패키지 (OCR 제외 태스크).
 
 [Pierrot-VLM-Lab](https://github.com/Pierrot-vision/Pierrot-VLM-Lab) 에서 학습·재구현한 다섯
 모델(PaliGemma2 · nanoVLM · SmolVLM2 · Qwen3-VL · Qwen3.5)을 돌리는 데 필요한 부분만
