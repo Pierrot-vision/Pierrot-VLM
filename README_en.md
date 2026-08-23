@@ -1,7 +1,7 @@
 <h1 align="center">🔮 PIERROT VLM</h1>
 
 <p align="center">
-  <b>Five from-scratch PyTorch vision-language models — inference distribution (non-OCR tasks)</b>
+  <b>PyTorch VLM research framework</b>
 </p>
 
 <p align="center">

@@ -1,7 +1,7 @@
 <h1 align="center">🔮 PIERROT VLM</h1>
 
 <p align="center">
-  <b>PyTorch 스크래치 비전-언어 모델 5종 — 추론 배포본 (OCR 제외 태스크)</b>
+  <b>PyTorch VLM 연구 프레임워크</b>
 </p>
 
 <p align="center">
