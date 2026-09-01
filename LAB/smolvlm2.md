@@ -382,6 +382,8 @@ causal + padding additive bias 로 합쳐 쓸 뿐이다(4.4). 모델 최상위�
 정답(Assistant/suffix) 토큰에만 cross-entropy([4.5]). SmolVLM2 는 labels 를 **미시프트**로
 두고 시프트를 forward 가 처리한다(nanoVLM 은 데이터셋에서 미리 `roll(-1)`).
 
+<a id="decoder"></a>
+
 ### 4.4 SmolLM2 언어 디코더 ([text.py](../pierrot/models/smolvlm2/modeling/text.py))
 ```
 inputs_embeds (B,T,D)

@@ -201,6 +201,8 @@ merger: m×m 이웃 패치를 reshape 로 접어 (S/m², D·m²) → 선형 → 
 
 `next_pos`(각 샘플의 다음 위치)는 생성 단계에서 이어 쓸 시작 위치로 반환된다.
 
+<a id="decoder"></a>
+
 ### 4.5 Qwen3 언어 디코더 ([text.py](../pierrot/models/qwen3vl/modeling/text.py))
 
 Llama 계열과 다른 두 가지 + DeepStack:

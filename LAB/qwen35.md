@@ -164,6 +164,8 @@ patch_embed: (S, 1536) → (S, 1024)          # patch16 · temporal2 · 24블록
 없고, 비전 타워는 최종 머저 출력 하나만 낸다. 병합은 `<|image_pad|>` 자리 교체
 (masked_scatter) 한 번으로 끝난다.
 
+<a id="decoder"></a>
+
 ### 4.2 하이브리드 언어 디코더 ([modeling/text.py](../pierrot/models/qwen35/modeling/text.py)) — 8 × (3 GDN → 1 Gated Attention)
 
 #### 하이브리드 배치 — 4층마다 하나만 full attention

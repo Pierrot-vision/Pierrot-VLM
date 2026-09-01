@@ -314,6 +314,8 @@ ChatML / 챗 템플릿은 마스크가 아니라 **문자열 표기 관습**의 
 **공통점**: 세 모델 모두 **손실 마스킹은 동일**하다 — 이미지·prefix·pad = `-100`,
 정답(suffix/assistant) 토큰에만 cross-entropy([4.5]).
 
+<a id="decoder"></a>
+
 ### 4.4 Gemma2 언어 모델 ([gemma2.py](../pierrot/models/paligemma2/modeling/gemma2.py))
 ```
 inputs_embeds

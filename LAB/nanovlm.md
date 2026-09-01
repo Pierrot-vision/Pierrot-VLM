@@ -298,6 +298,8 @@ x (N,1024,768)
 PaliGemma2 의 `masked_scatter` + `/sqrt(hidden)` 스케일 트릭은 **없다**(SmolLM2는 임베딩 스케일업이 없음).
 멀티 이미지·타일도 flatten 순서로 자연스럽게 채워진다.
 
+<a id="decoder"></a>
+
 ### 4.4 SmolLM2 언어 모델 ([language_model.py](https://github.com/huggingface/nanoVLM/blob/4e0c0961846135c2217f95e54cb4c2d66eb55e42/models/language_model.py))
 ```
 inputs_embeds (lm_use_tokens=False → 임베딩을 그대로 입력)
