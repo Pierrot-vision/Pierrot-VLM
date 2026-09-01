@@ -59,7 +59,8 @@ entrypoint, and config are **fully separated** from the others.
 | | **PaliGemma2** | **nanoVLM** | **SmolVLM2** | **Qwen3-VL** | **Qwen3.5** |
 |---|---|---|---|---|---|
 | Vision encoder | SigLIP-So400m | SigLIP2 ViT | SigLIP | Dynamic-res ViT | Dynamic-res ViT |
-| Language model | [Gemma 2 — 4 norms · local/global alternating · soft-cap](LAB/paligemma2.md#decoder) | [SmolLM2 — RMSNorm·RoPE·GQA·SwiGLU](LAB/nanovlm.md#decoder) | [SmolLM2 — same family](LAB/smolvlm2.md#decoder) | [Qwen3 — **QK-Norm** · interleaved M-RoPE](LAB/qwen3vl.md#decoder) | [Qwen3.5 hybrid — **Gated DeltaNet 3:1**](LAB/qwen35.md#decoder) |
+| Language model | [Gemma 2](LAB/paligemma2.md#decoder) | [SmolLM2](LAB/nanovlm.md#decoder) | [SmolLM2](LAB/smolvlm2.md#decoder) | [Qwen3](LAB/qwen3vl.md#decoder) | [Qwen3.5 hybrid](LAB/qwen35.md#decoder) |
+| Decoder traits | 4 norms·local/global·soft-cap | RoPE·GQA·SwiGLU | ← same | **QK-Norm**·M-RoPE | **Gated DeltaNet 3:1** |
 | Projector | [Linear](LAB/paligemma2.md#projector) | [Pixel-shuffle](LAB/nanovlm.md#projector) | [Pixel-shuffle](LAB/smolvlm2.md#projector) | [Patch merger](LAB/qwen3vl.md#projector) | [Patch merger](LAB/qwen35.md) |
 | Sequence | [`<bos>`+`\n`](LAB/paligemma2.md#prefix-lm) | [ChatML](LAB/nanovlm.md#chatml) | [Chat template](LAB/smolvlm2.md#chat-template) | [ChatML](LAB/qwen3vl.md) | [ChatML](LAB/qwen35.md) |
 | Attention mask | [prefix-LM](LAB/paligemma2.md#prefix-lm) | plain causal | plain causal | plain causal | plain causal |
