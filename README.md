@@ -60,7 +60,7 @@
 |---|---|---|---|---|---|
 | 비전 인코더 | SigLIP-So400m | SigLIP2 ViT | SigLIP | 동적해상도 ViT | 동적해상도 ViT |
 | 언어 모델 | [Gemma 2](LAB/paligemma2.md#decoder) | [SmolLM2](LAB/nanovlm.md#decoder) | [SmolLM2](LAB/smolvlm2.md#decoder) | [Qwen3](LAB/qwen3vl.md#decoder) | [Qwen3.5 하이브리드](LAB/qwen35.md#decoder) |
-| 디코더 특징 | 4-norm·local/global·soft-cap | RoPE·GQA·SwiGLU | ← 동일 | **QK-Norm**·M-RoPE | **Gated DeltaNet 3:1** |
+| 디코더 특징 | [4-norm·local/global·soft-cap](LAB/paligemma2.md#decoder) | [RoPE·GQA·SwiGLU](LAB/nanovlm.md#decoder) | [← 동일](LAB/smolvlm2.md#decoder) | [**QK-Norm**·M-RoPE](LAB/qwen3vl.md#decoder) | [**Gated DeltaNet 3:1**](LAB/qwen35.md#decoder) |
 | 프로젝터 | [Linear](LAB/paligemma2.md#projector) | [Pixel-shuffle](LAB/nanovlm.md#projector) | [Pixel-shuffle](LAB/smolvlm2.md#projector) | [Patch merger](LAB/qwen3vl.md#projector) | [Patch merger](LAB/qwen35.md) |
 | 시퀀스 | [`<bos>`+`\n`](LAB/paligemma2.md#prefix-lm) | [ChatML](LAB/nanovlm.md#chatml) | [챗 템플릿](LAB/smolvlm2.md#chat-template) | [ChatML](LAB/qwen3vl.md) | [ChatML](LAB/qwen35.md) |
 | 어텐션 마스크 | [prefix-LM](LAB/paligemma2.md#prefix-lm) | 일반 causal | 일반 causal | 일반 causal | 일반 causal |
