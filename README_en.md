@@ -68,7 +68,7 @@ entrypoint, and config are **fully separated** from the others.
 | Weight memory | ~6 GB | ~0.9 GB | ~0.5/1/4.4 GB | ~4 GB | ~8 GB |
 | Image tokens | fixed (896→4096) | dynamic tiles (64/tile) | dynamic tiles | no tiling (dynamic) | no tiling (dynamic) |
 
-> **Qwen3.5** implements the **Gated DeltaNet 3:1 hybrid decoder** fully from scratch in pure PyTorch (verified 1:1 against the official checkpoint — all 723 tensors).
+> **Qwen3.5** implements the [**Gated DeltaNet 3:1 hybrid decoder**](LAB/qwen35.md#하이브리드-배치--4층마다-하나만-full-attention) fully from scratch in pure PyTorch — of its 32 decoder layers, **24 are state-based GDN and only 8 are ordinary attention**, so the cache grows far more slowly on long contexts (verified 1:1 against the official checkpoint — all 723 tensors).
 
 **Numerical parity with the official implementations** — for Qwen3-VL and Qwen3.5 you can compare
 logits and generated tokens against the official HF implementation on public weights
@@ -336,7 +336,7 @@ just the wins.
 | [LAB/nanovlm.md](LAB/nanovlm.md) | pixel shuffle · tiling · **5-way port review · multi-turn packing fix · overfitting · eval-set diagnosis** |
 | [LAB/smolvlm2.md](LAB/smolvlm2.md) | Idefics3 tiling · **6-way review · pad/config/RoPE traps · MMStar evaluation** |
 | [LAB/qwen3vl.md](LAB/qwen3vl.md) | dynamic resolution · DeepStack · M-RoPE · **fashion attribute training experiment** |
-| [LAB/qwen35.md](LAB/qwen35.md) | Gated DeltaNet hybrid decoder from scratch · **1:1 tensor verification against the official checkpoint** |
+| [LAB/qwen35.md](LAB/qwen35.md) | [Gated DeltaNet **3:1 hybrid** decoder](LAB/qwen35.md#하이브리드-배치--4층마다-하나만-full-attention) from scratch · chunked + recurrent implementations · **1:1 tensor verification against the official checkpoint** |
 
 Links in those documents that point at `args/`, `training/`, or `tools/build_*` resolve to the
 **training repository** [Pierrot-VLM-Lab](https://github.com/Pierrot-vision/Pierrot-VLM-Lab) — those files

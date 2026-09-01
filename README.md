@@ -68,7 +68,7 @@
 | 가중치 메모리 | ~6 GB | ~0.9 GB | ~0.5/1/4.4 GB | ~4 GB | ~8 GB |
 | 이미지 토큰 | 고정 (896→4096) | 동적 타일 (64/타일) | 동적 타일 | 타일 없음 (동적) | 타일 없음 (동적) |
 
-> **Qwen3.5** 는 **Gated DeltaNet 3:1 하이브리드 디코더**를 순수 PyTorch로 풀 스크래치 구현했습니다 (공식 체크포인트와 텐서 1:1 · 723개 검증).
+> **Qwen3.5** 는 [**Gated DeltaNet 3:1 하이브리드 디코더**](LAB/qwen35.md#하이브리드-배치--4층마다-하나만-full-attention)를 순수 PyTorch로 풀 스크래치 구현했습니다 — 디코더 32층 중 **24층은 상태 기반 GDN, 8층만 보통 어텐션**이라 긴 문맥에서 캐시가 훨씬 천천히 늡니다 (공식 체크포인트와 텐서 1:1 · 723개 검증).
 
 **공식 구현과의 수치 대조** — Qwen3-VL · Qwen3.5 는 공개 가중치로 공식 HF 구현과 로짓·생성
 토큰을 직접 맞춰 볼 수 있습니다 ([tools/parity_qwen3vl.py](tools/parity_qwen3vl.py) ·
@@ -329,7 +329,7 @@ Pierrot-VLM/                    # git clone 으로 받는 디렉토리 이름
 | [LAB/nanovlm.md](LAB/nanovlm.md) | 픽셀셔플 · 타일링 · **이식 5-way 리뷰 · 멀티턴 패킹 수정 · 과적합 · 평가셋 진단** |
 | [LAB/smolvlm2.md](LAB/smolvlm2.md) | Idefics3 타일링 · **6-way 리뷰 · pad/config/RoPE 함정 · MMStar 평가** |
 | [LAB/qwen3vl.md](LAB/qwen3vl.md) | 동적해상도 · DeepStack · M-RoPE · **패션 속성 학습 실험** |
-| [LAB/qwen35.md](LAB/qwen35.md) | Gated DeltaNet 하이브리드 디코더 스크래치 · **공식 체크포인트 텐서 1:1 검증** |
+| [LAB/qwen35.md](LAB/qwen35.md) | [Gated DeltaNet **3:1 하이브리드** 디코더](LAB/qwen35.md#하이브리드-배치--4층마다-하나만-full-attention) 스크래치 · 청크/순차 두 구현 · **공식 체크포인트 텐서 1:1 검증** |
 
 문서에서 `args/` · `training/` · `tools/build_*` 를 가리키는 링크는 **학습 저장소**
 [Pierrot-VLM-Lab](https://github.com/Pierrot-vision/Pierrot-VLM-Lab) 으로 연결됩니다 — 이 배포본에는

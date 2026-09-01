@@ -166,6 +166,61 @@ patch_embed: (S, 1536) → (S, 1024)          # patch16 · temporal2 · 24블록
 
 ### 4.2 하이브리드 언어 디코더 ([modeling/text.py](../pierrot/models/qwen35/modeling/text.py)) — 8 × (3 GDN → 1 Gated Attention)
 
+#### 하이브리드 배치 — 4층마다 하나만 full attention
+
+**"Gated DeltaNet 3:1 하이브리드"란 디코더 층 4개 중 3개는 Gated DeltaNet, 1개만 보통
+어텐션이라는 뜻이다.**
+
+왜 섞는가. 보통 트랜스포머 디코더는 **모든 층이 self-attention** 인데 대가가 둘이다.
+
+- 연산이 시퀀스 길이의 **제곱**(O(T²))
+- 생성 중 **KV 캐시가 길이에 비례해 계속 불어난다** — 문서 한 페이지처럼 긴 입력에서 부담이 크다
+
+**Gated DeltaNet**(GDN)은 linear attention 계열이라 과거를 전부 들고 있지 않고 **고정 크기
+상태 하나**(헤드별 128×128 행렬)로 요약해 굴린다. 길이와 무관하게 메모리가 일정하고 연산도
+O(T) 다. 대신 "앞쪽 특정 토큰을 정확히 집어오는" 일은 softmax attention 보다 약하다.
+
+그래서 **대부분을 싼 층으로 채우고, 정밀한 참조가 필요한 자리만 남긴다.** 그 비율이 3:1 이다.
+
+```
+층  0~7   · · · F · · · F
+층  8~15  · · · F · · · F        ·  Gated DeltaNet (linear)  24개
+층 16~23  · · · F · · · F        F  full attention            8개
+층 24~31  · · · F · · · F        24 : 8 = 3 : 1
+                                 F 위치 = 층 3, 7, 11, 15, 19, 23, 27, 31
+```
+
+코드에는 비율이 아니라 **간격**으로 적혀 있고, `layer_types` 를 명시하지 않으면 거기서
+유도된다 ([config.py:95-117](../pierrot/models/qwen35/config.py#L95-L117)):
+
+```python
+full_attention_interval: int = 4          # 4번째마다 full → 자동으로 3:1
+layer_types: Optional[List[str]] = None   # 명시하면 그대로, 없으면 아래로 유도
+
+self.layer_types = [
+    "full_attention" if (i + 1) % self.full_attention_interval == 0 else "linear_attention"
+    for i in range(self.num_hidden_layers)
+]
+```
+
+**실질적인 결과는 생성 캐시가 두 종류가 된다는 것이다**
+([text.py:556-560](../pierrot/models/qwen35/modeling/text.py#L556-L560)):
+
+```python
+def new_cache(self) -> List[Dict]:
+    return [
+        {"key": None, "value": None}          # full attention 층 → KV 캐시 (길이만큼 쌓인다)
+        if t == "full_attention" else
+        {"conv": None, "recurrent": None}     # GDN 층 → 고정 크기 상태 (안 늘어난다)
+        for t in self.cfg.layer_types
+    ]
+```
+
+32층 중 **24층이 아래쪽**이라, 긴 문서를 생성해도 캐시 메모리가 일반 트랜스포머보다 훨씬
+천천히 는다. 이 배치는 Qwen3.5 공식 설정을 그대로 따랐다.
+
+#### 두 종류 층의 내부
+
 32개 레이어의 `layer_types` 가 `[linear, linear, linear, full] × 8`
 (`full_attention_interval=4`) — **24층은 Gated DeltaNet, 8층만 softmax attention** 이다.
 
