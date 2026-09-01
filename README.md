@@ -59,7 +59,7 @@
 | | **PaliGemma2** | **nanoVLM** | **SmolVLM2** | **Qwen3-VL** | **Qwen3.5** |
 |---|---|---|---|---|---|
 | 비전 인코더 | SigLIP-So400m | SigLIP2 ViT | SigLIP | 동적해상도 ViT | 동적해상도 ViT |
-| 언어 모델 | Gemma 2 | SmolLM2 | SmolLM2 | Qwen3 | Qwen3.5 하이브리드 |
+| 언어 모델 | Gemma 2 | SmolLM2 | SmolLM2 | Qwen3 | [Qwen3.5 하이브리드 — **Gated DeltaNet 3:1**](LAB/qwen35.md#하이브리드-배치--4층마다-하나만-full-attention) |
 | 프로젝터 | [Linear](LAB/paligemma2.md#projector) | [Pixel-shuffle](LAB/nanovlm.md#projector) | [Pixel-shuffle](LAB/smolvlm2.md#projector) | [Patch merger](LAB/qwen3vl.md#projector) | [Patch merger](LAB/qwen35.md) |
 | 시퀀스 | [`<bos>`+`\n`](LAB/paligemma2.md#prefix-lm) | [ChatML](LAB/nanovlm.md#chatml) | [챗 템플릿](LAB/smolvlm2.md#chat-template) | [ChatML](LAB/qwen3vl.md) | [ChatML](LAB/qwen35.md) |
 | 어텐션 마스크 | [prefix-LM](LAB/paligemma2.md#prefix-lm) | 일반 causal | 일반 causal | 일반 causal | 일반 causal |
@@ -67,12 +67,6 @@
 | 파라미터 | ~3B | ~450M | 256M/500M/2.2B | ~2B | ~4B |
 | 가중치 메모리 | ~6 GB | ~0.9 GB | ~0.5/1/4.4 GB | ~4 GB | ~8 GB |
 | 이미지 토큰 | 고정 (896→4096) | 동적 타일 (64/타일) | 동적 타일 | 타일 없음 (동적) | 타일 없음 (동적) |
-
-> **Qwen3.5** 는 [**Gated DeltaNet 3:1 하이브리드 디코더**](LAB/qwen35.md#하이브리드-배치--4층마다-하나만-full-attention)를 순수 PyTorch로 풀 스크래치 구현했습니다 — 디코더 32층 중 **24층은 상태 기반 GDN, 8층만 보통 어텐션**이라 긴 문맥에서 캐시가 훨씬 천천히 늡니다 (공식 체크포인트와 텐서 1:1 · 723개 검증).
-
-**공식 구현과의 수치 대조** — Qwen3-VL · Qwen3.5 는 공개 가중치로 공식 HF 구현과 로짓·생성
-토큰을 직접 맞춰 볼 수 있습니다 ([tools/parity_qwen3vl.py](tools/parity_qwen3vl.py) ·
-[tools/parity_qwen35.py](tools/parity_qwen35.py)).
 
 ---
 
